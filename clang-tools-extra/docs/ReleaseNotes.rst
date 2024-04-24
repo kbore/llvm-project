@@ -228,6 +228,10 @@ New checks
   Detects when objects of certain hostile RAII types persists across suspension
   points in a coroutine. Such hostile types include scoped-lockable types and
   types belonging to a configurable denylist.
+- New :doc:`misc-repeat-enum-value
+  <clang-tidy/checks/misc/repeat-enum-value>` check.
+
+  Detect repeated enum values during the enumeration define.
 
 - New :doc:`modernize-use-constraints
   <clang-tidy/checks/modernize/use-constraints>` check.
