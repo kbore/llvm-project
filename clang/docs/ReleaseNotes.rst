@@ -1376,6 +1376,8 @@ clang-format
 - Add ``ExceptDoubleParentheses`` sub-option for ``SpacesInParensOptions``
   to override addition of spaces between multiple, non-redundant parentheses
   similar to the rules used for ``RemoveParentheses``.
+- Adds ``IndentOnly`` suboption to ``ReflowComments`` to fix the indentation of multi-line comments
+  without touching their contents, renames ``false`` to ``Never``, and ``true`` to ``Always``.
 
 libclang
 --------
