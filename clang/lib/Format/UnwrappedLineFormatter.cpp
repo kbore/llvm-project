@@ -1546,6 +1546,15 @@ static auto computeNewlines(const AnnotatedLine &Line,
     }
   }
 
+  // Insert empty line before comment line, except following case:
+  // 1. First line of file
+  // 2. previous line start with {
+  // 3. previous line is also comment
+  if (Style.InsertNewlinBeforeComment && Line.isComment() && PreviousLine &&
+      !PreviousLine->startsWith(tok::l_brace) && !PreviousLine->isComment()) {
+    Newlines = std::max(Newlines, 2u);
+  }
+
   return Newlines;
 }
 

@@ -2908,6 +2908,10 @@ struct FormatStyle {
   /// \version 16
   bool InsertNewlineAtEOF;
 
+  /// Insert a newline before comment.
+  /// \version 19
+  bool InsertNewlinBeforeComment;
+
   /// The style of inserting trailing commas into container literals.
   enum TrailingCommaStyle : int8_t {
     /// Do not insert trailing commas.
@@ -5093,6 +5097,7 @@ struct FormatStyle {
            IndentWidth == R.IndentWidth &&
            IndentWrappedFunctionNames == R.IndentWrappedFunctionNames &&
            InsertBraces == R.InsertBraces &&
+           InsertNewlinBeforeComment == R.InsertNewlinBeforeComment &&
            InsertNewlineAtEOF == R.InsertNewlineAtEOF &&
            IntegerLiteralSeparator == R.IntegerLiteralSeparator &&
            JavaImportGroups == R.JavaImportGroups &&

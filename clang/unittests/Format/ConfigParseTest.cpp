@@ -178,6 +178,7 @@ TEST(ConfigParseTest, ParsesConfigurationBools) {
   CHECK_PARSE_BOOL(IndentWrappedFunctionNames);
   CHECK_PARSE_BOOL(InsertBraces);
   CHECK_PARSE_BOOL(InsertNewlineAtEOF);
+  CHECK_PARSE_BOOL(InsertNewlinBeforeComment);
   CHECK_PARSE_BOOL_FIELD(KeepEmptyLines.AtEndOfFile, "KeepEmptyLinesAtEOF");
   CHECK_PARSE_BOOL_FIELD(KeepEmptyLines.AtStartOfBlock,
                          "KeepEmptyLinesAtTheStartOfBlocks");

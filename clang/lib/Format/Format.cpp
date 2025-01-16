@@ -1022,6 +1022,7 @@ template <> struct MappingTraits<FormatStyle> {
                    Style.IndentWrappedFunctionNames);
     IO.mapOptional("InsertBraces", Style.InsertBraces);
     IO.mapOptional("InsertNewlineAtEOF", Style.InsertNewlineAtEOF);
+    IO.mapOptional("InsertNewlinBeforeComment", Style.InsertNewlinBeforeComment);
     IO.mapOptional("InsertTrailingCommas", Style.InsertTrailingCommas);
     IO.mapOptional("IntegerLiteralSeparator", Style.IntegerLiteralSeparator);
     IO.mapOptional("JavaImportGroups", Style.JavaImportGroups);
@@ -1531,6 +1532,7 @@ FormatStyle getLLVMStyle(FormatStyle::LanguageKind Language) {
   LLVMStyle.InheritsParentConfig = false;
   LLVMStyle.InsertBraces = false;
   LLVMStyle.InsertNewlineAtEOF = false;
+  LLVMStyle.InsertNewlinBeforeComment = false;
   LLVMStyle.InsertTrailingCommas = FormatStyle::TCS_None;
   LLVMStyle.IntegerLiteralSeparator = {
       /*Binary=*/0,  /*BinaryMinDigits=*/0,
