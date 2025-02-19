@@ -1552,9 +1552,11 @@ static auto computeNewlines(const AnnotatedLine &Line,
   // 3. previous line start with for/while and so on
   if (Style.InsertNewlinBeforeComment && Line.isComment() && PreviousLine &&
       !PreviousLine->isComment() &&
-      !PreviousLine->First->isOneOf(tok::kw_for, tok::kw_while, tok::kw_do,
-                                   TT_ForEachMacro, tok::kw_if, tok::kw_else,
-                                   tok::kw_switch, tok::kw_try, tok::l_brace)) {
+      !PreviousLine->First->isOneOf(
+          tok::kw_for, tok::kw_while, tok::kw_do, TT_ForEachMacro, tok::kw_if,
+          tok::kw_else, tok::kw_switch, tok::kw_try, tok::l_brace) &&
+      !PreviousLine->endsWith(tok::l_brace))
+  {
     Newlines = std::max(Newlines, 2u);
   }
 
